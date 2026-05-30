@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://placekitten.com/schemas/image-request.json",
+  "title": "PlaceKittenImageRequest",
+  "description": "Request parameters for retrieving a placeholder kitten image.",
+  "type": "object",
+  "properties": {
+    "width": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2000,
+      "description": "Target image width in pixels."
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2000,
+      "description": "Target image height in pixels."
+    },
+    "grayscale": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, request the grayscale (/g/) variant."
+    }
+  },
+  "required": ["width", "height"],
+  "additionalProperties": false
+}

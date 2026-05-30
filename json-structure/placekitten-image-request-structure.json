@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/draft-1/schema",
+  "name": "PlaceKittenImageRequestStructure",
+  "description": "Structural description of a PlaceKitten image request.",
+  "fields": [
+    {
+      "name": "width",
+      "type": "integer",
+      "required": true,
+      "constraints": { "min": 1, "max": 2000 },
+      "description": "Pixels wide."
+    },
+    {
+      "name": "height",
+      "type": "integer",
+      "required": true,
+      "constraints": { "min": 1, "max": 2000 },
+      "description": "Pixels tall."
+    },
+    {
+      "name": "grayscale",
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "description": "Routes to the /g/ grayscale path when true."
+    }
+  ],
+  "urlMapping": {
+    "color": "/{width}/{height}",
+    "grayscale": "/g/{width}/{height}"
+  }
+}

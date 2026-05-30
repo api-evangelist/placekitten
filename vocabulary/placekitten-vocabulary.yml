@@ -1,0 +1,38 @@
+name: PlaceKitten Vocabulary
+description: |
+  Domain vocabulary used by the PlaceKitten placeholder image service.
+  Provided as a historical reference; the live service is deprecated
+  (HTTP 521) as of 2026-05-30.
+version: 0.1.0
+status: deprecated
+terms:
+  - term: PlaceholderImage
+    definition: A stand-in image returned by the service in lieu of real content.
+    aliases: [placeholder, comp image, lorem image]
+  - term: Width
+    definition: Horizontal dimension of the returned image in pixels.
+  - term: Height
+    definition: Vertical dimension of the returned image in pixels.
+  - term: Grayscale
+    definition: Variant of the image rendered without color, routed via the /g/ path prefix.
+    aliases: [greyscale, monochrome]
+  - term: Color
+    definition: Default full-color image variant returned by the root path.
+operational:
+  - dimension: Availability
+    values: [deprecated, unreachable]
+  - dimension: Authentication
+    values: [none]
+  - dimension: Pricing
+    values: [free]
+capabilities:
+  - getKittenImage
+  - getGrayscaleKittenImage
+  - fetch-placeholder-image
+relatedServices:
+  - name: placehold.it
+    note: Original inspiration cited on the homepage.
+  - name: picsum.photos
+    note: Active modern alternative.
+  - name: placedog.net
+    note: Dog-themed equivalent that still ships images.

@@ -1,0 +1,43 @@
+name: fetch-placeholder-image
+description: |
+  Workflow capability for retrieving a placeholder kitten image of a
+  given size (color or grayscale). Wraps placekitten.com. Note that
+  the live service currently returns HTTP 521; callers should be
+  prepared to fall back to an alternative placeholder provider.
+version: 0.1.0
+status: deprecated
+inputs:
+  - name: width
+    type: integer
+    required: true
+    description: Target width in pixels.
+  - name: height
+    type: integer
+    required: true
+    description: Target height in pixels.
+  - name: grayscale
+    type: boolean
+    required: false
+    default: false
+    description: Request the grayscale variant when true.
+steps:
+  - id: choose-operation
+    type: branch
+    when: "${inputs.grayscale}"
+    then: invoke-grayscale
+    else: invoke-color
+  - id: invoke-color
+    uses: placekitten.getKittenImage
+    with:
+      width: "${inputs.width}"
+      height: "${inputs.height}"
+  - id: invoke-grayscale
+    uses: placekitten.getGrayscaleKittenImage
+    with:
+      width: "${inputs.width}"
+      height: "${inputs.height}"
+fallbacks:
+  - reason: origin-down
+    suggestion: Use picsum.photos/{width}/{height} or self-hosted placeholder.
+output:
+  contentType: image/jpeg

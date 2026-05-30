@@ -1,0 +1,28 @@
+{
+  "operationId": "getGrayscaleKittenImage",
+  "request": {
+    "method": "GET",
+    "url": "https://placekitten.com/g/200/300",
+    "pathParameters": {
+      "width": 200,
+      "height": 300
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "image/jpeg"
+    },
+    "body": "<binary JPEG payload, 200x300 grayscale kitten>"
+  },
+  "currentLiveResponse": {
+    "status": 521,
+    "headers": {
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Server": "cloudflare"
+    },
+    "body": "error code: 521",
+    "observedAt": "2026-05-30",
+    "notes": "Cloudflare reports origin web server is down. Service is treated as deprecated."
+  }
+}

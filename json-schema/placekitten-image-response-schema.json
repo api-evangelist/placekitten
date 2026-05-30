@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://placekitten.com/schemas/image-response.json",
+  "title": "PlaceKittenImageResponse",
+  "description": "Metadata describing the image payload returned by PlaceKitten. The binary body itself is not modeled here.",
+  "type": "object",
+  "properties": {
+    "contentType": {
+      "type": "string",
+      "const": "image/jpeg"
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "grayscale": {
+      "type": "boolean"
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": ["contentType", "width", "height", "sourceUrl"],
+  "additionalProperties": false
+}

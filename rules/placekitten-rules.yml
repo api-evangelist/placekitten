@@ -1,0 +1,62 @@
+extends:
+  - spectral:oas
+rules:
+  # PlaceKitten URL contract is: /{width}/{height} for color, /g/{width}/{height} for grayscale.
+  # Width and height path parameters must remain positive integers.
+  placekitten-path-shape:
+    description: PlaceKitten paths must include {width} and {height} path parameters.
+    severity: error
+    given: $.paths[*]
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+    formats:
+      - oas3
+  placekitten-width-parameter:
+    description: width path parameter must be a positive integer in pixels.
+    severity: error
+    given: $..parameters[?(@.name=='width')]
+    then:
+      - field: schema.type
+        function: enumeration
+        functionOptions:
+          values: [integer]
+      - field: schema.minimum
+        function: truthy
+  placekitten-height-parameter:
+    description: height path parameter must be a positive integer in pixels.
+    severity: error
+    given: $..parameters[?(@.name=='height')]
+    then:
+      - field: schema.type
+        function: enumeration
+        functionOptions:
+          values: [integer]
+      - field: schema.minimum
+        function: truthy
+  placekitten-image-response:
+    description: Successful responses must return image/jpeg payloads.
+    severity: warn
+    given: $.paths[*].get.responses['200'].content
+    then:
+      field: image/jpeg
+      function: truthy
+  placekitten-operation-summary-title-case:
+    description: Operation summaries should use Title Case.
+    severity: warn
+    given: $.paths[*][get,put,post,delete,patch,options,head].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][A-Za-z0-9]*)(\s[A-Z][A-Za-z0-9]*)*$'
+  placekitten-deprecation-notice:
+    description: The info block must carry x-status and x-deprecation-notice while the service is offline.
+    severity: warn
+    given: $.info
+    then:
+      - field: x-status
+        function: truthy
+      - field: x-deprecation-notice
+        function: truthy

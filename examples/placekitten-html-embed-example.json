@@ -1,0 +1,22 @@
+{
+  "description": "Typical HTML embed pattern that PlaceKitten was used for in design comps.",
+  "snippets": [
+    {
+      "language": "html",
+      "code": "<img src=\"https://placekitten.com/400/300\" alt=\"placeholder\" />"
+    },
+    {
+      "language": "html",
+      "code": "<img src=\"https://placekitten.com/g/400/300\" alt=\"grayscale placeholder\" />"
+    },
+    {
+      "language": "markdown",
+      "code": "![kitten](https://placekitten.com/300/200)"
+    },
+    {
+      "language": "css",
+      "code": ".hero { background-image: url('https://placekitten.com/1200/600'); }"
+    }
+  ],
+  "notes": "As of 2026-05-30 these URLs return HTTP 521 from Cloudflare; switch to picsum.photos or self-hosted assets."
+}

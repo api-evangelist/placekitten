@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "placekitten": "https://placekitten.com/vocab#",
+    "PlaceKittenService": {
+      "@id": "placekitten:PlaceKittenService",
+      "@type": "WebAPI"
+    },
+    "PlaceholderImage": {
+      "@id": "placekitten:PlaceholderImage",
+      "@type": "ImageObject"
+    },
+    "width": {
+      "@id": "schema:width",
+      "@type": "schema:Integer"
+    },
+    "height": {
+      "@id": "schema:height",
+      "@type": "schema:Integer"
+    },
+    "grayscale": {
+      "@id": "placekitten:grayscale",
+      "@type": "xsd:boolean"
+    },
+    "sourceUrl": "schema:contentUrl",
+    "provider": "schema:provider",
+    "status": {
+      "@id": "schema:actionStatus",
+      "@type": "schema:ActionStatusType"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}
