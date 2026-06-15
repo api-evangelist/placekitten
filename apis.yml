@@ -1,21 +1,22 @@
 aid: placekitten
 name: PlaceKitten
-description: "Placeholder kitten image service. Free, no-auth REST contract: /{width}/{height} for color, /g/{width}/{height} for grayscale. Created by Mark James, inspired by placehold.it."
+description: >-
+  Placeholder kitten image service. Free, no-auth REST contract: /{width}/{height} for color, /g/{width}/{height} for
+  grayscale. Created by Mark James, inspired by placehold.it.
 url: https://placekitten.com/
 specificationVersion: '0.20'
 created: '2026-05-28'
 modified: '2026-05-30'
 x-source: public-apis/public-apis
-x-category: "Animals"
+x-category: Animals
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
 x-type: opensource
 x-status: deprecated
 x-status-checked: '2026-05-30'
 x-status-evidence: >-
-  HTTPS probe of https://placekitten.com/, /200/300, and /g/200/300 returned
-  Cloudflare HTTP 521 (web server is down). DNS still resolves to Cloudflare
-  edge IPs but the origin appears offline.
+  HTTPS probe of https://placekitten.com/, /200/300, and /g/200/300 returned Cloudflare HTTP 521 (web server is down).
+  DNS still resolves to Cloudflare edge IPs but the origin appears offline.
 x-recommended-alternatives:
   - picsum.photos
   - placedog.net
@@ -28,7 +29,7 @@ tags:
   - Deprecated
 apis:
   - name: PlaceKitten
-    description: "Placeholder kitten image service (deprecated; origin returns HTTP 521)."
+    description: Placeholder kitten image service (deprecated; origin returns HTTP 521).
     humanURL: https://placekitten.com/
     baseURL: https://placekitten.com/
     tags:
@@ -49,10 +50,6 @@ apis:
         url: json-ld/placekitten-context.jsonld
       - type: SpectralRules
         url: rules/placekitten-rules.yml
-      - type: NaftikoCapability
-        url: capabilities/shared/placekitten.yaml
-      - type: NaftikoCapability
-        url: capabilities/fetch-placeholder-image.yaml
       - type: Vocabulary
         url: vocabulary/placekitten-vocabulary.yml
       - type: Example
