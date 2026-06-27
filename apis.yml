@@ -52,11 +52,11 @@ apis:
         url: rules/placekitten-rules.yml
       - type: Vocabulary
         url: vocabulary/placekitten-vocabulary.yml
-      - type: Example
+      - type: Examples
         url: examples/placekitten-getKittenImage-example.json
-      - type: Example
+      - type: Examples
         url: examples/placekitten-getGrayscaleKittenImage-example.json
-      - type: Example
+      - type: Examples
         url: examples/placekitten-html-embed-example.json
       - type: Archive
         url: https://web.archive.org/web/2023/https://placekitten.com/
