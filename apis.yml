@@ -64,6 +64,8 @@ apis:
       - FN: Mark James
         url: http://mark.james.name
 common:
+  - type: DomainSecurity
+    url: security/placekitten-domain-security.yml
   - type: Website
     url: https://placekitten.com/
   - type: PublicAPIsListing
