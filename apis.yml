@@ -1,4 +1,16 @@
 aid: placekitten
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/placekitten.png
 name: PlaceKitten
 description: >-
   Placeholder kitten image service. Free, no-auth REST contract: /{width}/{height} for color, /g/{width}/{height} for
@@ -28,41 +40,38 @@ tags:
   - Images
   - Deprecated
 apis:
-  - name: PlaceKitten
-    description: Placeholder kitten image service (deprecated; origin returns HTTP 521).
-    humanURL: https://placekitten.com/
-    baseURL: https://placekitten.com/
-    tags:
-      - Animals
-      - Placeholder
-    properties:
-      - type: Documentation
-        url: https://placekitten.com/
-      - type: OpenAPI
-        url: openapi/placekitten-openapi.yml
-      - type: JSONSchema
-        url: json-schema/placekitten-image-request-schema.json
-      - type: JSONSchema
-        url: json-schema/placekitten-image-response-schema.json
-      - type: JSONStructure
-        url: json-structure/placekitten-image-request-structure.json
-      - type: JSONLD
-        url: json-ld/placekitten-context.jsonld
-      - type: SpectralRules
-        url: rules/placekitten-rules.yml
-      - type: Vocabulary
-        url: vocabulary/placekitten-vocabulary.yml
-      - type: Examples
-        url: examples/placekitten-getKittenImage-example.json
-      - type: Examples
-        url: examples/placekitten-getGrayscaleKittenImage-example.json
-      - type: Examples
-        url: examples/placekitten-html-embed-example.json
-      - type: Archive
-        url: https://web.archive.org/web/2023/https://placekitten.com/
-    contact:
-      - FN: Mark James
-        url: http://mark.james.name
+- aid: placekitten:placekitten-image-api
+  name: PlaceKitten Image API
+  description: Placeholder image retrieval
+  humanURL: https://placekitten.com/
+  baseURL: https://placekitten.com/
+  tags:
+  - Image
+  properties:
+  - type: OpenAPI
+    url: openapi/placekitten-image-api-openapi.yml
+  - type: Documentation
+    url: https://placekitten.com/
+  - type: JSONSchema
+    url: json-schema/placekitten-image-request-schema.json
+  - type: JSONSchema
+    url: json-schema/placekitten-image-response-schema.json
+  - type: JSONStructure
+    url: json-structure/placekitten-image-request-structure.json
+  - type: JSONLD
+    url: json-ld/placekitten-context.jsonld
+  - type: SpectralRules
+    url: rules/placekitten-rules.yml
+  - type: Vocabulary
+    url: vocabulary/placekitten-vocabulary.yml
+  - type: Examples
+    url: examples/placekitten-getKittenImage-example.json
+  - type: Examples
+    url: examples/placekitten-getGrayscaleKittenImage-example.json
+  - type: Examples
+    url: examples/placekitten-html-embed-example.json
+  - type: Archive
+    url: https://web.archive.org/web/2023/https://placekitten.com/
 common:
   - type: AgenticAccess
     url: agentic-access/placekitten-agentic-access.yml
