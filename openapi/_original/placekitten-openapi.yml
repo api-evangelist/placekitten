@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: PlaceKitten
+  description: |
+    PlaceKitten is a placeholder image service that returns kitten photos at the
+    requested dimensions. It was a community-favorite stand-in alongside
+    placehold.it for designers and developers needing quick image stubs.
+
+    NOTE: As of 2026, the placekitten.com origin returns Cloudflare HTTP 521
+    (web server down). The service is treated as deprecated. This specification
+    is preserved for historical reference and to document the URL contract that
+    third-party SDKs and embeds depended on for over a decade.
+  version: 1.0.0
+  contact:
+    name: Mark James
+    url: https://placekitten.com/
+  license:
+    name: Image attribution — see provider
+    url: https://placekitten.com/attribution
+  x-status: deprecated
+  x-deprecation-notice: >-
+    placekitten.com origin is unreachable (HTTP 521) as of 2026-05-30.
+    Recommend migrating to placedog.net, picsum.photos, or self-hosted assets.
+servers:
+  - url: https://placekitten.com
+    description: Canonical (currently offline)
+tags:
+  - name: Image
+    description: Placeholder image retrieval
+paths:
+  /{width}/{height}:
+    get:
+      operationId: getKittenImage
+      summary: Get Color Kitten Image
+      description: |
+        Returns a color kitten JPEG sized to the requested width and height.
+        Both dimensions are positive integers expressed in pixels.
+      tags:
+        - Image
+      parameters:
+        - $ref: '#/components/parameters/Width'
+        - $ref: '#/components/parameters/Height'
+      responses:
+        '200':
+          description: A color kitten image at the requested dimensions.
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Image could not be produced for the requested size.
+        '521':
+          description: Origin web server is down (current default response in 2026).
+  /g/{width}/{height}:
+    get:
+      operationId: getGrayscaleKittenImage
+      summary: Get Grayscale Kitten Image
+      description: |
+        Returns a grayscale kitten JPEG sized to the requested width and height.
+        The leading `/g/` segment toggles the grayscale variant.
+      tags:
+        - Image
+      parameters:
+        - $ref: '#/components/parameters/Width'
+        - $ref: '#/components/parameters/Height'
+      responses:
+        '200':
+          description: A grayscale kitten image at the requested dimensions.
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Image could not be produced for the requested size.
+        '521':
+          description: Origin web server is down (current default response in 2026).
+components:
+  parameters:
+    Width:
+      name: width
+      in: path
+      required: true
+      description: Image width in pixels.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 2000
+        example: 200
+    Height:
+      name: height
+      in: path
+      required: true
+      description: Image height in pixels.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 2000
+        example: 300

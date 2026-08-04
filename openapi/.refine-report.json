@@ -1,0 +1,14 @@
+{
+  "provider": "placekitten",
+  "sources": [
+    "placekitten-image-api-openapi.yml"
+  ],
+  "outputs": [
+    "placekitten-image-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
