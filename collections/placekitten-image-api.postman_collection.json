@@ -1,0 +1,418 @@
+{
+  "item": [
+    {
+      "id": "1923721b-aa16-4f19-ad3a-c370216627ed",
+      "name": "Image",
+      "description": {
+        "content": "Placeholder image retrieval",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf5b8adb-9934-4459-9f5c-a2bf9ae1d744",
+          "name": "Get Color Kitten Image",
+          "request": {
+            "name": "Get Color Kitten Image",
+            "description": {
+              "content": "Returns a color kitten JPEG sized to the requested width and height.\nBoth dimensions are positive integers expressed in pixels.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":width",
+                ":height"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "width",
+                  "description": "(Required) Image width in pixels."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "height",
+                  "description": "(Required) Image height in pixels."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46da9d70-9080-490b-87ef-a98873a44c13",
+              "name": "A color kitten image at the requested dimensions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/jpeg"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6025ecc-3c6f-45be-8502-7e0af60b449b",
+              "name": "Image could not be produced for the requested size.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65ee5d6b-5888-463d-b2de-078d4de39e9b",
+              "name": "Origin web server is down (current default response in 2026).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "code": 521,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50fb4718-672c-48f5-a30f-52144e211301",
+          "name": "Get Grayscale Kitten Image",
+          "request": {
+            "name": "Get Grayscale Kitten Image",
+            "description": {
+              "content": "Returns a grayscale kitten JPEG sized to the requested width and height.\nThe leading `/g/` segment toggles the grayscale variant.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "g",
+                ":width",
+                ":height"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "width",
+                  "description": "(Required) Image width in pixels."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "height",
+                  "description": "(Required) Image height in pixels."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0603920-6ef6-46f3-bfb5-c5215445a691",
+              "name": "A grayscale kitten image at the requested dimensions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "g",
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/jpeg"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99dbedc9-10ab-4c05-881c-3997ead4f63b",
+              "name": "Image could not be produced for the requested size.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "g",
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e940df57-e5ff-42bf-83f1-7d4066d30c5f",
+              "name": "Origin web server is down (current default response in 2026).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "g",
+                    ":width",
+                    ":height"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "width",
+                      "description": "(Required) Image width in pixels."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "height",
+                      "description": "(Required) Image height in pixels."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "code": 521,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://placekitten.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "235ef96c-e438-43db-9ae3-dfbeb7827b77",
+    "name": "PlaceKitten Image API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PlaceKitten is a placeholder image service that returns kitten photos at the\nrequested dimensions. It was a community-favorite stand-in alongside\nplacehold.it for designers and developers needing quick image stubs.\n\nNOTE: As of 2026, the placekitten.com origin returns Cloudflare HTTP 521\n(web server down). The service is treated as deprecated. This specification\nis preserved for historical reference and to document the URL contract that\nthird-party SDKs and embeds depended on for over a decade.\n\n\nContact Support:\n Name: Mark James",
+      "type": "text/plain"
+    }
+  }
+}
