@@ -16,7 +16,7 @@ description: >-
   Placeholder kitten image service. Free, no-auth REST contract: /{width}/{height} for color, /g/{width}/{height} for
   grayscale. Created by Mark James, inspired by placehold.it.
 url: https://placekitten.com/
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-05-28'
 modified: '2026-05-30'
 x-source: public-apis/public-apis
