@@ -61,7 +61,6 @@ apis:
   name: PlaceKitten Image API
   description: Placeholder image retrieval
   humanURL: https://placekitten.com/
-  baseURL: https://placekitten.com/
   tags:
   - Image
   properties:
