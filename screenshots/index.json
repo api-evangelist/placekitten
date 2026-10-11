@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "placekitten",
+    "captured_at": "2026-10-11T191932",
+    "source_url": "https://placekitten.com/",
+    "source_type": "Website",
+    "file": "placekitten-2026-10-11T191932.png",
+    "bytes": 75982,
+    "capture": "playwright-local"
+  }
+]
