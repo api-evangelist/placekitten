@@ -81,16 +81,6 @@ paths:
           description: Origin web server is down (current default response in 2026).
 components:
   parameters:
-    Height:
-      name: height
-      in: path
-      required: true
-      description: Image height in pixels.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 2000
-        example: 300
     Width:
       name: width
       in: path
@@ -101,3 +91,13 @@ components:
         minimum: 1
         maximum: 2000
         example: 200
+    Height:
+      name: height
+      in: path
+      required: true
+      description: Image height in pixels.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 2000
+        example: 300
